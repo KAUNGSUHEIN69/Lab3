@@ -28,3 +28,28 @@ def test_bubble_sort_invalid():
     result = Lab3.bubble_sort(input_arr, 3)
 
     assert (result == [])
+
+def test_bubble_sort_large_input():
+    input_arr = [i for i in range(10)]  # Input with 10 elements
+    expected_result = 1
+    
+    result = Lab3.bubble_sort(input_arr, Lab3.SORT_ASCENDING)
+    
+    assert result == expected_result
+
+def test_bubble_empty_input():
+    input_arr = []  # Input with 10 elements
+    expected_result = 0
+    
+    result = Lab3.bubble_sort(input_arr, Lab3.SORT_ASCENDING)
+    
+    assert result == expected_result
+
+
+def test_bubble_sort_non_integer():
+    input_arr = [64, 34, 25, "12", 22, 11, 90]  # Contains a string element
+    expected_result = 2
+    
+    result = Lab3.bubble_sort(input_arr, Lab3.SORT_ASCENDING)
+    
+    assert result == expected_result
